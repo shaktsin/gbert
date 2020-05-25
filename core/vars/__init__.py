@@ -1,4 +1,1 @@
-class Var(object):
-    """
-    Generic variable type, having some common properties
-    """
+__all__ = ["num_var"]
