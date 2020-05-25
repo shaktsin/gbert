@@ -130,3 +130,9 @@ dmypy.json
 
 # test py
 test.py
+
+#ides
+.vscode
+.pycharm
+.idea
+.DS_Store

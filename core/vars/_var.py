@@ -1,4 +1,4 @@
-class Var(object):
+class Var:
     """
     Generic variable type, having some common properties
     """

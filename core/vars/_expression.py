@@ -8,7 +8,7 @@ class Expression:
     def __str__(self):
         return "{}(operator={}, operand_one={}, operand_two={})".format(self.__class__.__name__, self.operator, self.operand_one, self.operand_two)
 
-    def __str__(self):
+    def __repr__(self):
         return "{}(operator={}, operand_one={}, operand_two={})".format(self.__class__.__name__, self.operator, self.operand_one, self.operand_two)
 
     def __add__(self, other):

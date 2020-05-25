@@ -14,7 +14,7 @@ class Solver:
 
     GBERT_SIMPLEX = ""
 
-    def __init__(self, name: str: "lpp", engine: GBERT_SIMPLEX):
+    def __init__(self, name: str = "lpp", engine: str = GBERT_SIMPLEX):
         """
         parmas:
         name - symbolic name for model 
@@ -38,7 +38,7 @@ class Solver:
         self._variables.add(v)
         return v
 
-    def TotalVariables():
+    def TotalVariables(self):
         """
         Returns total variables in the lieanr optimization problem 
 
@@ -46,5 +46,7 @@ class Solver:
         int 
         """
         return len(self._variables)
+
+    
 
 
