@@ -1,2 +1,2 @@
 # gbert
-Python LPP Solver
+Python Linear Programming Optimization Solver
