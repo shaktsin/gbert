@@ -1,7 +1,7 @@
 import sys
 from numbers import Number
 from ._var import Var
-from ._expression import Expression
+from .expression import Expression
 
 class NumVar(Var):
     """

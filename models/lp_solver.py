@@ -1,5 +1,6 @@
 import sys 
-from core.vars import num_var
+import core.vars.num_var as nv
+from core.vars.expression import Expression 
 
 class Solver:
     """
@@ -12,6 +13,8 @@ class Solver:
 
     """
 
+    MAX = "maximize"
+    MIN = "minimize"
     GBERT_SIMPLEX = ""
 
     def __init__(self, name: str = "lpp", engine: str = GBERT_SIMPLEX):
@@ -23,6 +26,9 @@ class Solver:
         self.name = name 
         self.engine = engine
         self._variables = set()
+        self._constraints = set()
+        self._expression = None
+        self._method = self.MAX
 
     def NumVar(self, lb: float = 0, ub: float = sys.float_info.max, name: str = "x"):
         """
@@ -34,7 +40,7 @@ class Solver:
         returns
         NumVar - A floating type GBERT linear unknown variable
         """
-        v = num_var.NumVar(lb, ub, name)
+        v = nv.NumVar(lb, ub, name)
         self._variables.add(v)
         return v
 
@@ -46,6 +52,19 @@ class Solver:
         int 
         """
         return len(self._variables)
+
+    def AddConstraint(self, expression: Expression):
+        self._constraints.add(expression)
+
+    def SetObjective(self, expression: Expression, method: str = MAX):
+        self._expression = expression
+        self._method = method
+
+    def Solve(self):
+        return None
+
+    
+
 
     
 
